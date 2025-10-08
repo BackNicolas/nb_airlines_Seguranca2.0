@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gerenciamento de Segurança Patrimonial</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        /* 🔹 MENU PADRÃO */
+        .navbar-custom {
+            background-color: #0d6efd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-custom .nav-link {
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 0.3s, background-color 0.3s;
+            padding: 15px 18px;
+            border-radius: 5px;
+        }
+
+        .navbar-custom .nav-link:hover,
+        .navbar-custom .nav-link.active {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: #ffffff !important;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        .body-content {
+            padding-top: 75px;
+            /* espaço para o menu fixo */
+        }
+
+        .section-header {
+            background-color: #0d6efd;
+            color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .card {
+            border-radius: 8px;
+        }
+
+        .incident-table {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: #212529;
+            color: white;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🔹 MENU PADRÃO -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-shield-alt me-2"></i> Segurança Patrimonial
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#contrato">
+                            <i class="fas fa-home me-1"></i> Início
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#relatorios">
+                            <i class="fas fa-file-alt me-1"></i> Relatórios
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-light ms-lg-2 px-3 py-1" href="registroDeInciIndex.html">
+                            <i class="fas fa-sign-out-alt me-1"></i> Sair
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🔹 CONTEÚDO PRINCIPAL -->
+    <div class="container body-content">
+        <!-- Seção 8.9 -->
+        <div id="contrato" class="section-header">
+            <h2>8.9. Formulário de Contrato de Serviços Terceirizados</h2>
+            <p>Gerencia contratos com empresas de segurança.</p>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Novo Contrato</h5>
+            </div>
+            <div class="card-body">
+                <form id="contratoForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="empresa" class="form-label">Nome da Empresa de Segurança</label>
+                            <input type="text" class="form-control" id="empresa" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="cnpj" class="form-label">CNPJ</label>
+                            <input type="text" class="form-control" id="cnpj" placeholder="00.000.000/0000-00" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="dataInicio" class="form-label">Data de Início</label>
+                            <input type="date" class="form-control" id="dataInicio" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="dataFim" class="form-label">Data de Fim</label>
+                            <input type="date" class="form-control" id="dataFim" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descricao" class="form-label">Descrição dos Serviços</label>
+                        <textarea class="form-control" id="descricao" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="valor" class="form-label">Valor do Contrato (R$)</label>
+                        <input type="number" class="form-control" id="valor" step="0.01" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 fw-semibold">Salvar Contrato</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Seção 8.10 -->
+        <div id="relatorios" class="section-header">
+            <h2>8.10. Tela de Relatórios de Incidentes Físicos</h2>
+            <p>Permite a visualização de incidentes patrimoniais.</p>
+        </div>
+
+        <div class="card incident-table">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5>Relatórios de Incidentes</h5>
+                <div class="input-group" style="width: 220px;">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Buscar incidente...">
+                    <button class="btn btn-outline-secondary" type="button" id="searchBtn">Buscar</button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-striped mb-0">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Data</th>
+                                <th>Tipo</th>
+                                <th>Descrição</th>
+                                <th>Local</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="incidentsTable"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔹 Rodapé -->
+    <footer>
+        &copy; 2025 Viterio - Todos os direitos reservados.
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const incidents = [
+            { id: 1, data: '2023-10-01', tipo: 'Roubo', descricao: 'Invasão ao depósito', local: 'Depósito Principal', status: 'Em Andamento' },
+            { id: 2, data: '2023-10-05', tipo: 'Dano Patrimonial', descricao: 'Vidro quebrado na entrada', local: 'Entrada Principal', status: 'Resolvido' },
+            { id: 3, data: '2023-10-10', tipo: 'Furto', descricao: 'Equipamentos roubados', local: 'Sala de TI', status: 'Investigação' },
+            { id: 4, data: '2023-10-15', tipo: 'Vandalismo', descricao: 'Grafite nas paredes', local: 'Fachada', status: 'Resolvido' }
+        ];
+
+        function renderIncidents(filtered = incidents) {
+            const tbody = document.getElementById('incidentsTable');
+            tbody.innerHTML = '';
+            filtered.forEach(inc => {
+                tbody.innerHTML += `
+                    <tr>
+                        <td>${inc.id}</td>
+                        <td>${inc.data}</td>
+                        <td>${inc.tipo}</td>
+                        <td>${inc.descricao}</td>
+                        <td>${inc.local}</td>
+                        <td><span class="badge bg-${inc.status === 'Resolvido' ? 'success' : 'warning'}">${inc.status}</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-info">Visualizar</button>
+                            <button class="btn btn-sm btn-secondary">Editar</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            const term = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = incidents.filter(inc =>
+                inc.descricao.toLowerCase().includes(term) ||
+                inc.local.toLowerCase().includes(term) ||
+                inc.tipo.toLowerCase().includes(term)
+            );
+            renderIncidents(filtered);
+        });
+
+        document.getElementById('contratoForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Contrato salvo com sucesso!');
+            e.target.reset();
+        });
+
+        renderIncidents();
+    </script>
+</body>
+
+</html>

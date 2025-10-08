@@ -1,0 +1,8 @@
+body { margin:0; font-family:Arial, sans-serif; }
+.topbar { background:#0051ff; color:#fff; padding:10px; display:flex; justify-content:space-between; align-items:center; }
+.content { display:grid; grid-template-columns:220px 1fr 320px; height:calc(100vh - 56px); }
+.leftpanel, .rightpanel { padding:10px; background:#f7f7f7; overflow:auto; }
+.centerpanel { padding:10px; overflow:auto; }
+table { width:100%; border-collapse:collapse; background:#fff; }
+table th, table td { border:1px solid #ddd; padding:8px; text-align:left; }
+button.action { margin-right:6px; padding:6px 8px; }

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Painel de Monitoramento</title>
+  <link rel="stylesheet" href="../css/painel_monitoramento.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">LOGO</div>
+    <div class="title">Painel de Monitoramento - Hangares</div>
+    <div class="user">Usuário: Admin</div>
+    <div class="sair"><a href="registroDeInciIndex.html">Sair</a></div>
+  </header>
+
+  <aside class="sidebar">
+    <h3>Filtros</h3>
+    <label>Hangar
+      <select id="filter-hangar">
+        <option value="">Todos</option>
+        <option value="H1">Hangar 1</option>
+      </select>
+    </label>
+    <ul id="camera-list"></ul>
+  </aside>
+
+  <main class="main-grid" id="grid">
+    <!-- Tiles serão inseridos por JS -->
+  </main>
+
+  <section class="sidepanel" id="sidepanel">
+    <h4>Detalhes da Câmera</h4>
+    <div id="camera-details">Selecione uma câmera</div>
+  </section>
+
+  <script src="../js/painel_monitoramento.js"></script>
+</body>
+</html>

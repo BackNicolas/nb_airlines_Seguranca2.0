@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Controle de Acesso</title>
+  <link rel="stylesheet" href="../css/controle_acesso.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">LOGO</div>
+    <div class="title">Controle de Acesso</div>
+    <div class="user">Usuário: Porteiro</div>
+    <div class="sair"><a href="registroDeInciIndex.html">Sair</a></div>
+  </header>
+
+  <section class="content">
+    <aside class="leftpanel">
+      <h4>Filtros</h4>
+      <label>Área:
+        <select id="filter-area">
+          <option value="">Todas</option>
+          <option value="Hangar1">Hangar 1</option>
+        </select>
+      </label>
+    </aside>
+
+    <main class="centerpanel">
+      <table id="requests-table">
+        <thead><tr><th>Hora</th><th>Pessoa</th><th>Porta</th><th>Status</th><th>Ações</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </main>
+
+    <aside class="rightpanel" id="detail">
+      <h4>Detalhe</h4>
+      <div>Selecione uma requisição</div>
+    </aside>
+  </section>
+
+  <script src="../js/controle_acesso.js"></script>
+</body>
+</html>

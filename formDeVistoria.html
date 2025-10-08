@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formulário de Vistoria de Instalações</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS personalizado -->
+    <link href="css/formDeVistoria.css" rel="stylesheet" />
+
+    <style>
+        /* === MENU CUSTOMIZADO === */
+        .navbar-custom {
+            background-color: #0d6efd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 0;
+            width: 100%;
+        }
+
+        .navbar-custom .nav-link {
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 0.3s, background-color 0.3s;
+            padding: 15px 18px;
+            border-radius: 5px;
+        }
+
+        .navbar-custom .nav-link:hover,
+        .navbar-custom .nav-link.active {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: #ffffff !important;
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(1);
+        }
+
+        body {
+            margin: 0;
+            padding-top: 80px;
+            /* Espaço para o menu fixo */
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- === MENU DE NAVEGAÇÃO === -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-shield-alt me-2"></i> Segurança Patrimonial
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu"
+                aria-controls="mainMenu" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="registroDeInciIndex.html"><i
+                                class="fas fa-home me-1"></i> Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="invetDeAtivos.html"><i class="fas fa-box me-1"></i>
+                            Inventário</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownFormularios" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-clipboard-list me-1"></i> Formulários
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownFormularios">
+                            <li><a class="dropdown-item" href="forDeContrDeServi.html"><i
+                                        class="fas fa-file-contract me-2"></i> Contrato de Serviços</a></li>
+                            <li><a class="dropdown-item" href="formDeTreinaDeSegu.html"><i
+                                        class="fas fa-user-shield me-2"></i> Treinamento de Segurança</a></li>
+                            <li><a class="dropdown-item active" href="formDeVistoria.html"><i
+                                        class="fas fa-map-marker-alt me-2"></i> Vistoria</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="agendarManutencao.html"><i class="fas fa-tools me-2"></i>
+                                    Agendar Manutenção</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="relatorios.html"><i
+                                class="fas fa-chart-bar me-1"></i> Relatórios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="controle_acesso.html"><i
+                                class="fas fa-users me-1"></i> Controle de Acesso</a></li>
+                    <li class="nav-item"><a class="nav-link" href="painel_monitoramento.html"><i
+                                class="fas fa-desktop me-1"></i> Painel</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-light ms-lg-2 px-3 py-1" href="registroDeInciIndex.html">
+                            <i class="fas fa-sign-out-alt me-1"></i> Sair
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- === CONTEÚDO PRINCIPAL === -->
+    <div class="container py-5">
+        <h1 class="text-center text-primary mb-4">Formulário de Vistoria de Instalações</h1>
+
+        <form id="vistoria-form" novalidate class="bg-white p-4 rounded shadow-sm">
+            <div id="feedback"></div>
+
+            <!-- Dados do Inspetor e Data -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="nome-inspetor" class="form-label fw-semibold">Nome do Inspetor <span
+                            class="text-danger">*</span></label>
+                    <input type="text" id="nome-inspetor" name="nomeInspetor" class="form-control"
+                        placeholder="Digite seu nome" required />
+                    <div class="invalid-feedback">Por favor, informe o nome do inspetor.</div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="data-vistoria" class="form-label fw-semibold">Data da Vistoria <span
+                            class="text-danger">*</span></label>
+                    <input type="date" id="data-vistoria" name="dataVistoria" class="form-control" required />
+                    <div class="invalid-feedback">Por favor, informe a data da vistoria.</div>
+                </div>
+            </div>
+
+            <!-- Checklist -->
+            <fieldset class="mb-4">
+                <legend class="fw-semibold">Checklist de Segurança <span class="text-danger">*</span></legend>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="item1" name="checklist"
+                        value="Uso de EPIs adequados" />
+                    <label class="form-check-label" for="item1">Uso de EPIs adequados</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="item2" name="checklist"
+                        value="Sinalização de segurança visível" />
+                    <label class="form-check-label" for="item2">Sinalização de segurança visível</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="item3" name="checklist"
+                        value="Área livre de obstruções" />
+                    <label class="form-check-label" for="item3">Área livre de obstruções</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="item4" name="checklist"
+                        value="Extintores com validade vigente" />
+                    <label class="form-check-label" for="item4">Extintores com validade vigente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="item5" name="checklist"
+                        value="Sistema de iluminação adequado" />
+                    <label class="form-check-label" for="item5">Sistema de iluminação adequado</label>
+                </div>
+                <div id="checklist-error" class="text-danger mt-1 d-none" style="font-size: 0.875em;">
+                    Por favor, selecione pelo menos um item do checklist.
+                </div>
+            </fieldset>
+
+            <!-- Observações -->
+            <div class="mb-4">
+                <label for="observacoes" class="form-label fw-semibold">Observações</label>
+                <textarea id="observacoes" name="observacoes" rows="4" class="form-control"
+                    placeholder="Anotações adicionais..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 fw-semibold">Enviar Vistoria</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/formDeVistoria.js"></script>
+</body>
+
+</html>
