@@ -18,6 +18,46 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             /* Sombra suave */
         }
+    
+        .navbar-custom .nav-link {
+            color: rgba(255, 255, 255, 0.85);
+            /* Cor dos links */
+            transition: color 0.3s, background-color 0.3s;
+            padding: 15px 18px;
+            /* Aumenta a área de clique */
+            border-radius: 5px;
+        }
+    
+        .navbar-custom .nav-link:hover,
+        .navbar-custom .nav-link.active {
+            color: #ffffff;
+            /* Cor branca ao passar o mouse */
+            background-color: rgba(255, 255, 255, 0.15);
+            /* Fundo sutil */
+        }
+    
+        .navbar-brand {
+            font-weight: 700;
+            color: #ffffff !important;
+        }
+    
+        .navbar-toggler-icon {
+            filter: invert(1);
+            /* Inverte a cor do ícone do menu sanduíche para branco */
+        }
+    
+        /* Ajuste do container principal para não ficar grudado na Navbar */
+        .body-content {
+            padding-top: 20px;
+        }
+
+        /* Estilos customizados para aprimorar a visualização da Navbar */
+        .navbar-custom {
+            background-color: #0d6efd;
+            /* Cor azul primária do Bootstrap */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Sombra suave */
+        }
 
         .navbar-custom .nav-link {
             color: rgba(255, 255, 255, 0.85);
@@ -81,27 +121,28 @@
                         </a>
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownRelatorios" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-chart-line me-1"></i> Formularios
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownRelatorios">
-                            <li><a class="dropdown-item" href="forDeContrDeServi.html"><i class="fas fa-calendar-alt me-2"></i> 
-                                    Contrato de serviços</a></li>
-                            <li><a class="dropdown-item" href="formDeTreinaDeSegu.html"><i class="fas fa-calendar-alt me-2"></i>
-                                    Treinamento de segurança</a></li>
-                            <li><a class="dropdown-item" href="formDeVistoria.html"><i class="fas fa-map-marker-alt me-2"></i> 
-                                    Vistoria</a></li>
-                            <li>
-                            <li><a class="dropdown-item" href="seg_formularios.html"><i class="fas fa-map-marker-alt me-2"></i>
-                                    Geral</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="agendarManutencao.html"><i class="fas fa-tachometer-alt me-2"></i> Agendar Manutencao</a></li>
-                        </ul>
-                    </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownRelatorios" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="fas fa-chart-line me-1"></i> Formularios
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownRelatorios">
+                        <li><a class="dropdown-item" href="forDeContrDeServi.html"><i class="fas fa-calendar-alt me-2"></i>
+                                Contrato de serviços</a></li>
+                        <li><a class="dropdown-item" href="formDeTreinaDeSegu.html"><i class="fas fa-calendar-alt me-2"></i>
+                                Treinamento de segurança</a></li>
+                        <li><a class="dropdown-item" href="formDeVistoria.html"><i class="fas fa-map-marker-alt me-2"></i>
+                                Vistoria</a></li>
+                        <li>
+                        <li><a class="dropdown-item" href="seg_formularios.html"><i class="fas fa-map-marker-alt me-2"></i>
+                                Geral</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="agendarManutencao.html"><i class="fas fa-tachometer-alt me-2"></i> Agendar
+                                Manutencao</a></li>
+                    </ul>
+                </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="seg_index.html">
